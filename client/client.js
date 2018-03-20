@@ -7,14 +7,15 @@ const main = async () => {
 		payload, 
 		{
 			auth: {
-				username: process.env.CLIENT_ID,
-				password: process.env.CLIENT_SECRET
+				username: process.env.OKTA_CLIENT_ID,
+				password: process.env.OKTA_CLIENT_SECRET
 		  	},
 		  	headers: {
+		  		'Accept': 'application/json',
 		  		'Content-Type': 'application/x-www-form-urlencoded'
 		  	}
 	});
-	console.log(data)
+	console.log(JSON.stringify(data, null, 4))
 }
 
 (async () => {
